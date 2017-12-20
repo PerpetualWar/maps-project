@@ -7,7 +7,7 @@
     }
 }
 
-.login-overlay {
-    @include login-overlay(rgba(0, 0, 0, 0.7));
+.spinner-overlay {
+    @include overlay(rgba(0, 0, 0, 0.4));
     display: block;
 }
