@@ -17,8 +17,12 @@ class MapContainer extends Component {
     zoom: 11
   };
   onClickHandler = async () => {
-    await this.props.getDate();
+    if (!this.props.date)
+      await this.getDate();
     this.props.toggleDrawer();
+  }
+  getDate = async () => {
+    await this.props.getDate();
   }
 
   render() {

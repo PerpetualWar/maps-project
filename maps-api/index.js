@@ -14,7 +14,6 @@ app.use(cors());
 
 app.get('/date', (req, res) => {
   const formattedDate = format(new Date(), 'DD MMMM YYYY H:m.ss');
-  console.log(req.headers); 
   res.send(formattedDate);
 });
 
