@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleDrawer } from '../actions';
+import { toggleDrawer } from '../store/actions/action_preferences';
 
 const Overlay = (props) => {
-    const onBackdropClick = () => {
-        props.toggleDrawer();
-    }
     const classNames = props.drawerOpen ? 'overlay overlay-active' : 'overlay';
-    return <div className={classNames} onClick={onBackdropClick} />;
+    console.log(props)
+    return <div className={classNames} 
+    />;
 }
 
 const mapStateToProps = ({ preferences: { drawerOpen } }) => ({ drawerOpen });

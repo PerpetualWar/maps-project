@@ -9,9 +9,6 @@ import { toggleDrawer } from '../store/actions/action_preferences';
 import Spinner from './Spinner';
 
 class MapContainer extends Component {
-  state = {
-    loading: false
-  }
   static defaultProps = {
     center: { lat: 43.84, lng: 18.35 },
     zoom: 11
@@ -29,7 +26,7 @@ class MapContainer extends Component {
     return (
       <div style={{ width: '100vw', height: '100vh', overflow: 'scroll' }}>
         <CSSTransition classNames="slide" in={this.props.drawerOpen} >
-          <Drawer date={this.props.date} onClose={this.props.toggleDrawer} />
+          <Drawer date={this.props.date} close={this.props.toggleDrawer} />
         </CSSTransition>
         <GoogleMap
           defaultCenter={this.props.center}
