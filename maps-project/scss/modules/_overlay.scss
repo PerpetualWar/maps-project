@@ -1,0 +1,13 @@
+.overlay {
+    @include overlay(rgba(0, 0, 0, 0.4));
+    display: none;
+
+    &.overlay-active {
+        display: block;
+    }
+}
+
+.login-overlay {
+    @include login-overlay(rgba(0, 0, 0, 0.7));
+    display: block;
+}

@@ -1,0 +1,25 @@
+// GLOBAL MIXINS
+
+@mixin material-box-shadow() {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+}
+
+@mixin overlay($color) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+  background: $color;
+}
+
+@mixin login-overlay($color) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 200;
+  background: $color;
+}

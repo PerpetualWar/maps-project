@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import GoogleMap from 'google-map-react';
 import Marker from './Marker';
+import Drawer from './Drawer';
 import { getDate } from '../store/actions/action_date';
+import { toggleDrawer } from '../store/actions/action_preferences';
 
 class MapContainer extends Component {
   static defaultProps = {
@@ -13,6 +15,7 @@ class MapContainer extends Component {
   onClickHandler = async () => {
     console.log('marker click works')
     await this.props.getDate();
+    this.props.toggleDrawer();
   }
 
   render() {
@@ -28,6 +31,7 @@ class MapContainer extends Component {
             text={'Car'}
             clicked={this.onClickHandler}
           />
+          {this.props.drawerOpen && <Drawer onClose={this.props.toggleDrawer} />}
         </GoogleMap>
       </div>
     )
@@ -36,7 +40,8 @@ class MapContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    date: state.date
+    date: state.date,
+    drawerOpen: state.preferences.drawerOpen
   }
 }
-export default connect(mapStateToProps, { getDate })(MapContainer);
+export default connect(mapStateToProps, { getDate, toggleDrawer })(MapContainer);
