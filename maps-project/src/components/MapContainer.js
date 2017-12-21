@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GoogleMap from 'google-map-react';
-import { CSSTransition, Transition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import Marker from './Marker';
 import Drawer from './Drawer';
 import { getDate } from '../store/actions/action_date';
 import { toggleDrawer } from '../store/actions/action_preferences';
-import Spinner from './Spinner';
 
 class MapContainer extends Component {
   static defaultProps = {
