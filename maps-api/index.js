@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/date', (req, res) => {
-  const formattedDate = format(new Date(), 'DD MMMM YYYY H:m.ss');
+  const formattedDate = format(Date.now(), 'DD MMMM YYYY H:m.ss');
   res.send(formattedDate);
 });
 
